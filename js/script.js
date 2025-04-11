@@ -1,3 +1,9 @@
+// FUNCTIONS
+function showForm() {
+  numberListEl.classList.add("d-none");
+  formAnswerEl.classList.remove("d-none");
+}
+
 // prendo gli elementi su cui devo andare a lavorare
 
 const istruzioniEl = document.getElementById("instructions");
@@ -5,7 +11,7 @@ const countDownEl = document.getElementById("countdown");
 const numberListEl = document.getElementById("numbers-list");
 const formAnswerEl = document.getElementById("answers-form");
 const inputAnswerEl = document.getElementById("input-group");
-
+const inputElement = document.querySelectorAll("#input-group");
 // devo far comparire per un tempo x 5 nuemri random da confrontare con quelli dell'utente e un contdown
 let NumberMemo = [];
 for (let i = 0, t = 5; i < t; i++) {
@@ -15,30 +21,19 @@ console.log(NumberMemo);
 numberListEl.innerHTML += NumberMemo;
 let remaining = 10000;
 
-// timer
-const startingMinutes = 10;
-let time = startingMinutes % 60;
-
 //
+let countdown = 10;
 
 //intervallo
 let interval = setInterval(function updateCountdown() {
-  const minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  let timerStatus = true;
-  seconds = seconds < 10 ? "0" + seconds : seconds;
+  countdown--;
+  countDownEl.innerHTML = countdown;
 
-  countdown.innerHTML = seconds;
-  time--;
-
-  if (minutes + seconds <= 0) {
+  if (countdown === 0) {
     clearInterval(interval);
-  } else {
+    showForm();
   }
 }, 1000);
-let dispalyinterval = setInterval(() => {
-  numberListEl.classList.add("d-none");
-  formAnswerEl.classList.remove("d-none");
-}, 1000);
-
-console.log(interval);
+// let dispalyinterval = setInterval(() => {}, 1000);
+const elementForm = inputElement.value;
+console.log(elementForm);
