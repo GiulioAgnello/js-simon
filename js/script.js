@@ -33,10 +33,12 @@ function updateCountdown() {
     clearInterval(interval);
   } else {
   }
-  numberListEl.classList.add("d-none");
-  formAnswerEl.classList.remove("d-none");
+  //
 }
-//intervallo con countdown
+//intervallo
 let interval = setInterval(updateCountdown, 1000);
 
 console.log(interval);
+
+// numberListEl.classList.add("d-none");
+//   formAnswerEl.classList.remove("d-none");
