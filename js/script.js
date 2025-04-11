@@ -14,18 +14,29 @@ for (let i = 0, t = 5; i < t; i++) {
 console.log(NumberMemo);
 numberListEl.innerHTML += NumberMemo;
 let remaining = 10000;
-const counthandle = () => {
-  remaining -= 1000;
-
-  if (remaining > 0) {
-    console.warn(remaining);
-  }
-};
-setInterval(() => {
-  counthandle, 1000;
-  numberListEl.classList.add("d-none");
-  formAnswerEl.classList.remove("d-none");
-  countDownEl.innerText = remaining;
-}, 10000);
 
 console.log(remaining);
+// timer
+const startingMinutes = 10;
+let time = startingMinutes % 60;
+
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  let timerStatus = true;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  countdown.innerHTML = seconds;
+  time--;
+
+  if (minutes + seconds <= 0) {
+    clearInterval(interval);
+  } else {
+  }
+  numberListEl.classList.add("d-none");
+  formAnswerEl.classList.remove("d-none");
+}
+//intervallo con countdown
+let interval = setInterval(updateCountdown, 1000);
+
+console.log(interval);
