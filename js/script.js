@@ -8,14 +8,13 @@ const inputAnswerEl = document.getElementById("input-group");
 
 // devo far comparire per un tempo x 5 nuemri random da confrontare con quelli dell'utente e un contdown
 let NumberMemo = [];
-
-const randomnumber = Math.floor(Math.random() * 100);
-for (i = 0; i < 4; i++) {
-  let arrayNumber = [i];
-  console.log(randomnumber);
+for (let i = 0, t = 5; i < t; i++) {
+  NumberMemo.push(Math.round(Math.random() * 99));
 }
+console.log(NumberMemo);
+numberListEl.innerHTML += NumberMemo;
 
-setInterval(() => {
-  const randomnumber = Math.floor(Math.random() * 100);
-  console.log(randomnumber);
-}, 8000);
+// setInterval(() => {
+//   const randomnumber = Math.floor(Math.random() * 100);
+//   console.log(randomnumber);
+// }, 8000);
