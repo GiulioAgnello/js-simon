@@ -11,14 +11,16 @@ const countDownEl = document.getElementById("countdown");
 const numberListEl = document.getElementById("numbers-list");
 const formAnswerEl = document.getElementById("answers-form");
 const inputAnswerEl = document.getElementById("input-group");
-const inputElement = document.querySelectorAll("#input-group");
+const inputElement = document.querySelectorAll("#answers-form");
 // devo far comparire per un tempo x 5 nuemri random da confrontare con quelli dell'utente e un contdown
-let NumberMemo = [];
+let numberMemo = [];
 for (let i = 0, t = 5; i < t; i++) {
-  NumberMemo.push(Math.round(Math.random() * 50));
+  const randomNumber = Math.round(Math.random() * 50);
+  numberMemo.push(randomNumber);
+  numberListEl.innerHTML += `<li>${randomNumber}<li>`;
 }
-console.log(NumberMemo);
-numberListEl.innerHTML += NumberMemo;
+console.log(numberMemo);
+
 let remaining = 10000;
 
 //
@@ -30,10 +32,17 @@ let interval = setInterval(function updateCountdown() {
   countDownEl.innerHTML = countdown;
 
   if (countdown === 0) {
+    // Finito il countdown
     clearInterval(interval);
     showForm();
+    const numbersEl = inputElement.querySelectorAll("input");
+    console.log(numbersEl);
   }
 }, 1000);
 // let dispalyinterval = setInterval(() => {}, 1000);
 const elementForm = inputElement.value;
-console.log(elementForm);
+
+for (i = 0; i < 5; i++) {
+  let currentChar = [i];
+}
+console.log(currentChar);
