@@ -14,7 +14,7 @@ for (let i = 0, t = 5; i < t; i++) {
 console.log(NumberMemo);
 numberListEl.innerHTML += NumberMemo;
 
-// setInterval(() => {
-//   const randomnumber = Math.floor(Math.random() * 100);
-//   console.log(randomnumber);
-// }, 8000);
+setInterval(() => {
+  numberListEl.classList.add("d-none");
+  formAnswerEl.classList.remove("d-none");
+}, 8000);
