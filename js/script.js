@@ -15,12 +15,14 @@ console.log(NumberMemo);
 numberListEl.innerHTML += NumberMemo;
 let remaining = 10000;
 
-console.log(remaining);
 // timer
 const startingMinutes = 10;
 let time = startingMinutes % 60;
 
-function updateCountdown() {
+//
+
+//intervallo
+let interval = setInterval(function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
   let timerStatus = true;
@@ -33,12 +35,10 @@ function updateCountdown() {
     clearInterval(interval);
   } else {
   }
-  //
-}
-//intervallo
-let interval = setInterval(updateCountdown, 1000);
+}, 1000);
+let dispalyinterval = setInterval(() => {
+  numberListEl.classList.add("d-none");
+  formAnswerEl.classList.remove("d-none");
+}, 1000);
 
 console.log(interval);
-
-// numberListEl.classList.add("d-none");
-//   formAnswerEl.classList.remove("d-none");
