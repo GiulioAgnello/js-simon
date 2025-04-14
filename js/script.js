@@ -37,12 +37,14 @@ let interval = setInterval(function updateCountdown() {
     showForm();
     const numbersEl = inputElement.querySelectorAll("input");
     console.log(numbersEl);
+    formAnswerEl.addEventListener("Submit", (c) => {
+      e.preventDefault();
+      // prendo i calori indicati da user
+
+      inputElement.value;
+
+      console.log(inputElement);
+    });
   }
 }, 1000);
 // let dispalyinterval = setInterval(() => {}, 1000);
-const elementForm = inputElement.value;
-
-for (i = 0; i < 5; i++) {
-  let currentChar = [i];
-}
-console.log(currentChar);
